@@ -1,5 +1,6 @@
 .zehn-root {
   min-height: 100vh;
+  width: 100%;
   background: #fafafa;
   color: #222;
   font-family: 'Inter', Arial, sans-serif;
@@ -30,8 +31,7 @@
   flex: 1;
 }
 .zehn-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display:flex;
   gap: 1.5rem;
 }
 .zehn-gallery-item {
@@ -129,4 +129,16 @@
     font-size: 0.9rem;
     padding: 0.7rem 0;
   }
+  @media (max-width: 800px) {
+    .zehn-gallery {
+      flex-direction: column;
+      margin: 10px;
+    }
+  }
+  @media (max-width: 800px) {
+    .zehn-modal-content {
+        width: 78vw;
+        padding: 1rem;
+    }
+}
 }
