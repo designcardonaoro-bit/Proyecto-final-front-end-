@@ -52,10 +52,10 @@ const Home = () => {
                   <img src={cercasiBansky} alt="Imagen blog 1" /> {/* Imagen de la obra */}
                 </div>
                 <div className="card-body">
-                  <h3 className="card-title">Galería</h3>
-                  <p className="card-date">1503 - 1506</p>
+                  <h3 className="card-title">Cercasi Banksy Disperatamente</h3>
+                  <p className="card-date">2026</p>
                   <p className="card-excerpt">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ad quod, libero molestias rerum quos. Dicta, magni dolore. Quae omnis itaque ullam nihil, quaerat ipsam accusamus? Cumque doloribus quaerat architecto.
+                    Una obra de aire urbano y provocador que juega con el lenguaje del arte callejero, la ironía y la crítica social. Su composición transmite rebeldía, búsqueda de identidad y una estética contemporánea que remite al grafiti, al stencil y a la cultura visual de la calle.
                   </p>
                   <a className="card-btn" href="/gallery">IR</a> {/* Botón para ir a la galería */}
                 </div>
@@ -67,10 +67,10 @@ const Home = () => {
                   <img src={futuroSalva} alt="Imagen blog 2" /> {/* Imagen de la obra */}
                 </div>
                 <div className="card-body">
-                  <h3 className="card-title">Galería</h3>
-                  <p className="card-date">1495 - 1498</p>
+                  <h3 className="card-title">Futuro Salvaje</h3>
+                  <p className="card-date">2026</p>
                   <p className="card-excerpt">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet corporis commodi ipsa ab culpa molestiae illum eligendi reiciendis sunt maxime soluta, nobis dignissimos quisquam quia magni accusamus veniam. Repudiandae, id.
+                    Una pieza contundente que mezcla lo elegante con lo salvaje, combinando trazos dorados, símbolos de poder y una estética casi ritual. La obra transmite tensión, misterio y transformación, como si anunciara un nuevo comienzo donde lo instintivo y lo contemporáneo conviven en equilibrio.
                   </p>
                   <a className="card-btn" href="/gallery">IR</a> {/* Botón para ir a la galería */}
                 </div>
@@ -82,10 +82,10 @@ const Home = () => {
                   <img src={tercera} alt="Imagen blog 3" /> {/* Imagen de la obra */}
                 </div>
                 <div className="card-body">
-                  <h3 className="card-title">Galería</h3>
-                  <p className="card-date">1890 - 1895</p>
+                  <h3 className="card-title">Urban Sketchers</h3>
+                  <p className="card-date">2026</p>
                   <p className="card-excerpt">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente, itaque ipsa? Laudantium porro voluptatum doloremque impedit officiis eligendi laboriosam dolorem culpa repudiandae, possimus atque cupiditate, vel at fugit autem accusantium.
+                    Una obra inspirada en la observación directa de la ciudad, donde el dibujo funciona como memoria visual de recorridos, calles, rincones y momentos cotidianos. Tiene un espíritu espontáneo y documental, ideal para capturar la energía de Medellín con una mirada artística, cercana y personal.
                   </p>
                   <a className="card-btn" href="/gallery">IR</a> {/* Botón para ir a la galería */}
                 </div>
