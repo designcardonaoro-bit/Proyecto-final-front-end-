@@ -8,51 +8,51 @@ import Swal from "sweetalert2";
 const obras = [
   {
     titulo: "Luz y Sombra",
-    descripcion: "Una exploración minimalista de la luz en el espacio.",
+    descripcion: "Paisaje nocturno de montaña con contrastes profundos y atmósfera serena.",
     precio: "$1,200 USD",
     imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
   },
   {
     titulo: "Geometría Azul",
-    descripcion: "Formas geométricas en tonos azules evocando calma.",
+    descripcion: "Valle en tonos azules con composición equilibrada y sensación de calma.",
     precio: "$950 USD",
     imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
   },
   {
     titulo: "Horizonte Rojo",
-    descripcion: "Un horizonte abstracto en tonos cálidos y vibrantes.",
+    descripcion: "Escena minimalista frente al mar con tonos cálidos y estilo contemporáneo.",
     precio: "$1,500 USD",
     imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
   },
   {
     titulo: "Verde Esencial",
-    descripcion: "La esencia de la naturaleza en un solo trazo.",
+    descripcion: "Cielo estrellado sobre paisaje natural que transmite profundidad y silencio.",
     precio: "$800 USD",
     imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
   },
-    {
-    titulo: "Verde Esencial",
-    descripcion: "La esencia de la naturaleza en un solo trazo.",
-    precio: "$800 USD",
-    imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+  {
+    titulo: "Niebla de Terracota",
+    descripcion: "Montañas cubiertas de neblina con tonos cálidos y estética elegante.",
+    precio: "$1,050 USD",
+    imagen: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=600&q=80",
   },
-    {
-    titulo: "Verde Esencial",
-    descripcion: "La esencia de la naturaleza en un solo trazo.",
-    precio: "$800 USD",
-    imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+  {
+    titulo: "Marea Silente",
+    descripcion: "Horizonte marino minimalista con luz suave y composición limpia.",
+    precio: "$1,250 USD",
+    imagen: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
   },
-    {
-    titulo: "Verde Esencial",
-    descripcion: "La esencia de la naturaleza en un solo trazo.",
-    precio: "$800 USD",
-    imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+  {
+    titulo: "Constelación Interior",
+    descripcion: "Texturas celestes y estrellas que evocan contemplación y espacio.",
+    precio: "$900 USD",
+    imagen: "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=600&q=80",
   },
-    {
-    titulo: "Verde Esencial",
-    descripcion: "La esencia de la naturaleza en un solo trazo.",
-    precio: "$800 USD",
-    imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+  {
+    titulo: "Eco de Alba",
+    descripcion: "Amanecer suave en tonos rosados y azules con estilo moderno.",
+    precio: "$1,100 USD",
+    imagen: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=600&q=80",
   },
 ];
 
