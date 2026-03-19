@@ -1,0 +1,174 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: #ffffff;
+}
+
+/* ********************************** */
+/*               BANNER               */
+/* ********************************** */
+.banner {
+  background-image: linear-gradient(100deg, #000000, #00000020),
+    url("https://zehn.com.co/wp-content/uploads/2024/04/zehn.19.jpg"); /* Cambia la ruta según la ubicación de tu imagen */
+  height: 40rem; /* Altura del banner */
+  background-size: cover;
+  background-position: center;
+}
+
+.content-banner {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 15rem 0; /* Espaciado interno del contenido */
+  text-align: center;
+}
+
+.content-banner p {
+  color: #d2b495; /* Color del texto */
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.content-banner h2 {
+  color: #fff; /* Color del encabezado */
+  font-size: 3rem; /* Tamaño del texto principal */
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.content-banner a {
+  margin-top: 2rem;
+  text-decoration: none;
+  color: #fff; /* Color del texto del botón */
+  background-color: #d2b495; /* Color de fondo del botón */
+  display: inline-block;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  border-radius: 3rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.banner .content-banner .btn.btn-primary {
+  background-color: #c9a07a;
+  border-color: #d2b495;
+  color: #fff; /* Color del texto del botón */
+  font-weight: 600;
+}
+
+.banner .content-banner .btn.btn-primary:hover {
+  background-color: #b77b42; /* Color del botón al pasar el mouse */
+  border-color: #d2b495;
+  color: #fff;
+  font-weight: 600;
+}
+
+
+/* Sección */
+.blog-section {
+  background: var(--section-bg, #f9f9f9); /* Usa una variable o un color por defecto */
+  padding: calc(var(--page-padding, 2rem) * 1.2) 16px;
+}
+
+/* Centrar y limitar ancho */
+.blog-container {
+  max-width: var(--container-width, 1200px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Título */
+.section-title {
+  text-align: center;
+  font-size: 34px;
+  margin: 0 0 32px;
+  font-weight: 700;
+  color: var(--card-text, #333);
+  letter-spacing: 0.2px;
+}
+
+/* Grid responsive */
+.blogs-grid {
+  display: grid;
+  gap: var(--gap, 24px);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive */
+  align-items: start;
+}
+
+/* Card */
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: transparent; /* Si no quieres fondo blanco */
+}
+
+/* Media (imagen) */
+.card-media {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius, 8px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+/* Ajuste de imagen: conserva proporción y rellena el recuadro */
+.card-media img {
+  display: block;
+  width: 100%;
+  height: var(--max-image-height, 200px);
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius, 8px);
+}
+
+/* Cuerpo del card */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Título del blog */
+.card-title {
+  margin: 0;
+  font-size: 20px;
+  color: var(--card-text, #333);
+  font-weight: 600;
+}
+
+/* Fecha */
+.card-date {
+  margin: 0;
+  color: var(--muted, #999);
+  font-size: 14px;
+}
+
+/* Extracto */
+.card-excerpt {
+  margin: 0;
+  color: #6f6a66;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* Botón estilo redondito */
+.card-btn {
+  display: inline-block;
+  width: fit-content;
+  padding: 10px 22px;
+  background: var(--accent, #d2b495);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-top: 6px;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.05);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+/* Hover botón */
+.card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}

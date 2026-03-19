@@ -4,7 +4,7 @@
 	justify-content: space-between;
 	align-items: flex-start;
 	padding: 40px 60px 20px 60px;
-	background: #fff;
+	background: #F9F9F9;
 	color: #111;
 	font-family: 'Inter', Arial, Helvetica, sans-serif;
 	font-size: 16px;
@@ -54,7 +54,7 @@
 	width: 40px;
 	height: 28px;
 	object-fit: contain;
-	background: #222;
+	background: #acabab;
 	border-radius: 4px;
 	padding: 4px 8px;
 }

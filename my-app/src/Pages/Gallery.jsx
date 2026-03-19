@@ -1,31 +1,34 @@
 import React, { useState } from "react";
-import "./ZehnGallery.css";
+import Navbar from "../components/JSX/Navbar";
+import Footer from "../components/JSX/footer";
+import Button from "../components/Button";
+import "../Styles/Gallery.css";
 
 const obras = [
   {
     titulo: "Luz y Sombra",
     descripcion: "Una exploración minimalista de la luz en el espacio.",
     precio: "$1,200 USD",
-    imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80"
+    imagen: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
   },
   {
     titulo: "Geometría Azul",
     descripcion: "Formas geométricas en tonos azules evocando calma.",
     precio: "$950 USD",
-    imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+    imagen: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
   },
   {
     titulo: "Horizonte Rojo",
     descripcion: "Un horizonte abstracto en tonos cálidos y vibrantes.",
     precio: "$1,500 USD",
-    imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
+    imagen: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
   },
   {
     titulo: "Verde Esencial",
     descripcion: "La esencia de la naturaleza en un solo trazo.",
     precio: "$800 USD",
-    imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80"
-  }
+    imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+  },
 ];
 
 function Gallery() {
@@ -43,11 +46,9 @@ function Gallery() {
   };
 
   return (
-    <div className="zehn-root">
-      <header className="zehn-header">
-        <h1>Zehn</h1>
-      </header>
-      <main className="zehn-main">
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+      <Navbar />
+      <main className="zehn-main" style={{ flex: 1 }}>
         <section className="zehn-gallery">
           {obras.map((obra, idx) => (
             <div
@@ -80,9 +81,8 @@ function Gallery() {
           </div>
         )}
       </main>
-      <footer className="zehn-footer">
-        <p>&copy; 2026 Zehn. Todos los derechos reservados.</p>
-      </footer>
+      <Footer />
+      <Button />
     </div>
   );
 }
