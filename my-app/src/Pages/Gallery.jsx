@@ -3,6 +3,7 @@ import Navbar from "../components/JSX/Navbar";
 import Footer from "../components/JSX/footer";
 import Button from "../components/Button";
 import "../Styles/Gallery.css";
+import Swal from "sweetalert2";
 
 const obras = [
   {
@@ -29,6 +30,30 @@ const obras = [
     precio: "$800 USD",
     imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
   },
+    {
+    titulo: "Verde Esencial",
+    descripcion: "La esencia de la naturaleza en un solo trazo.",
+    precio: "$800 USD",
+    imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+  },
+    {
+    titulo: "Verde Esencial",
+    descripcion: "La esencia de la naturaleza en un solo trazo.",
+    precio: "$800 USD",
+    imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+  },
+    {
+    titulo: "Verde Esencial",
+    descripcion: "La esencia de la naturaleza en un solo trazo.",
+    precio: "$800 USD",
+    imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+  },
+    {
+    titulo: "Verde Esencial",
+    descripcion: "La esencia de la naturaleza en un solo trazo.",
+    precio: "$800 USD",
+    imagen: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+  },
 ];
 
 function Gallery() {
@@ -43,6 +68,16 @@ function Gallery() {
   const closeModal = () => {
     setModalOpen(false);
     setObraActual(null);
+  };
+
+  const handleBuyClick = () => {
+    Swal.fire({
+      title: "Dale click al botón para redirigirte a nuestra pagina principal",
+      icon: "success",
+      draggable: true
+    }).then(() => {
+      window.location.href = "#";
+    });
   };
 
   return (
@@ -76,6 +111,7 @@ function Gallery() {
                 <h2>{obraActual.titulo}</h2>
                 <p>{obraActual.descripcion}</p>
                 <p className="zehn-price">{obraActual.precio}</p>
+                <button className="zehn-buy-button" onClick={handleBuyClick}>Comprar</button>
               </div>
             </div>
           </div>

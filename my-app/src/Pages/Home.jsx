@@ -12,6 +12,7 @@ import futuroSalva from "../assets/futuroSalvaje.png";
 import tercera from "../assets/terceraObra.png";
 import reporte from "../assets/reporte.png";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const handleReportButtonClick = (e) => {
@@ -22,7 +23,7 @@ const Home = () => {
       draggable: true
     }).then(() => {
       // Redirect to the desired link after the alert
-      window.location.href = "#"; // Replace '#' with your desired link
+      window.location.href = "https://zehn.com.co/"; // Replace '#' with your desired link
     });
   };
 
@@ -34,7 +35,7 @@ const Home = () => {
           <div className="content-banner">
             <p>Artesanias</p>
             <h2>Arte y diseño <br /> Galería de obras</h2>
-            <a href="#" className="btn btn-primary">Eventos</a>
+            <a href="/events" className="btn btn-primary">Eventos</a>
           </div>
         </div>
 
@@ -55,7 +56,7 @@ const Home = () => {
                   <p className="card-excerpt">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ad quod, libero molestias rerum quos. Dicta, magni dolore. Quae omnis itaque ullam nihil, quaerat ipsam accusamus? Cumque doloribus quaerat architecto.
                   </p>
-                  <a className="card-btn" href="#">COMPRAR</a>
+                  <a className="card-btn" href="/gallery">IR</a>
                 </div>
               </article>
 
@@ -70,7 +71,7 @@ const Home = () => {
                   <p className="card-excerpt">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet corporis commodi ipsa ab culpa molestiae illum eligendi reiciendis sunt maxime soluta, nobis dignissimos quisquam quia magni accusamus veniam. Repudiandae, id.
                   </p>
-                  <a className="card-btn" href="#">COMPRAR</a>
+                  <a className="card-btn" href="/gallery">IR</a>
                 </div>
               </article>
 
@@ -85,7 +86,7 @@ const Home = () => {
                   <p className="card-excerpt">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente, itaque ipsa? Laudantium porro voluptatum doloremque impedit officiis eligendi laboriosam dolorem culpa repudiandae, possimus atque cupiditate, vel at fugit autem accusantium.
                   </p>
-                  <a className="card-btn" href="#">COMPRAR</a>
+                  <a className="card-btn" href="/gallery">IR</a>
                 </div>
               </article>
             </div>
@@ -148,7 +149,7 @@ const Home = () => {
               <h2>Conocenos</h2>
               <p>Incluye el Informe Periódico de Fin de Ejercicio 2024</p>
               <p>Recordamos un año impulsado por la confianza y el apoyo de todos nuestros aliados y comunidades.</p>
-              <a href="https://zehn.com.co/" className="report-button" onClick={handleReportButtonClick}>DESCUBRE MÁS</a>
+              <a href="#" className="report-button" onClick={handleReportButtonClick}>DESCUBRE MÁS</a>
             </div>
             <div className="report-image">
               <img src={reporte} alt="Informe de gestión" />

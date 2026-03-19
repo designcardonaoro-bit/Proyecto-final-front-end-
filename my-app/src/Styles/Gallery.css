@@ -31,8 +31,10 @@
   flex: 1;
 }
 .zehn-gallery {
-  display:flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Exactly 4 items per row */
   gap: 1.5rem;
+  justify-content: center;
 }
 .zehn-gallery-item {
   background: #fff;
@@ -106,6 +108,24 @@
 }
 .zehn-close:hover {
   color: #0a7cff;
+}
+.zehn-buy-button {
+  display: inline-block;
+  padding: 10px 22px;
+  background: #d2b495;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-top: 6px;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.05);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  border: none;
+  cursor: pointer;
+}
+.zehn-buy-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 @media (max-width: 600px) {
   .zehn-gallery {
