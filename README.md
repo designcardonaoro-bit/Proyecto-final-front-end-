@@ -33,51 +33,49 @@ Después de ejecutar los comandos anteriores, el proyecto quedará listo para fu
 # File Tree: Proyecto-final-front-end-
 # Estructura del proyecto
 ```
-├── 📁 my-app
-│   ├── 📁 public
-│   │   ├── 🖼️ Logo-Zehn-4x.svg
-│   │   └── 🖼️ vite.svg
-│   ├── 📁 src
-│   │   ├── 📁 Pages
-│   │   │   ├── 📄 Events.jsx
-│   │   │   ├── 📄 Gallery.jsx
-│   │   │   └── 📄 Home.jsx
-│   │   ├── 📁 Styles
-│   │   │   ├── 🎨 Events.css
-│   │   │   ├── 🎨 Gallery.css
-│   │   │   └── 🎨 Home.css
-│   │   ├── 📁 assets
-│   │   │   ├── 🖼️ EVENTO-1.svg
-│   │   │   ├── 🖼️ UMBRALES-CONTEMPORANEOS.svg
-│   │   │   ├── 🖼️ apolo.png
-│   │   │   ├── 🖼️ cercasi_Bansky.png
-│   │   │   ├── 🖼️ edwinGomez.png
-│   │   │   ├── 🖼️ futuroSalvaje.png
-│   │   │   ├── 🖼️ gabrielAlzate.jpg
-│   │   │   ├── 🖼️ nataliaGaviria.png
-│   │   │   ├── 🖼️ react.svg
-│   │   │   ├── 🖼️ reporte.png
-│   │   │   ├── 🖼️ taller.svg
-│   │   │   ├── 🖼️ terceraObra.png
-│   │   │   └── 🖼️ zehn.19.svg
-│   │   ├── 📁 components
-│   │   │   ├── 📁 JSX
-│   │   │   │   ├── 📁 CSS
-│   │   │   │   │   ├── 🎨 Button.css
-│   │   │   │   │   ├── 🎨 Navbar.css
-│   │   │   │   │   └── 🎨 footer.css
-│   │   │   │   ├── 📄 Navbar.jsx
-│   │   │   │   └── 📄 footer.jsx
-│   │   │   └── 📄 Button.jsx
-│   │   └── 📄 main.jsx
-│   ├── ⚙️ .gitignore
-│   ├── 📝 README.md
-│   ├── 📄 eslint.config.js
-│   ├── 🌐 index.html
-│   ├── ⚙️ package-lock.json
-│   ├── ⚙️ package.json
-│   └── 📄 vite.config.js
-└── 📝 README.md
+├── 📁 public
+│   ├── 🖼️ Logo-Zehn-4x.svg
+│   └── 🖼️ vite.svg
+├── 📁 src
+│   ├── 📁 Pages
+│   │   ├── 📄 Events.jsx
+│   │   ├── 📄 Gallery.jsx
+│   │   └── 📄 Home.jsx
+│   ├── 📁 Styles
+│   │   ├── 🎨 Events.css
+│   │   ├── 🎨 Gallery.css
+│   │   └── 🎨 Home.css
+│   ├── 📁 assets
+│   │   ├── 🖼️ EVENTO-1.svg
+│   │   ├── 🖼️ UMBRALES-CONTEMPORANEOS.svg
+│   │   ├── 🖼️ apolo.png
+│   │   ├── 🖼️ cercasi_Bansky.png
+│   │   ├── 🖼️ edwinGomez.png
+│   │   ├── 🖼️ futuroSalvaje.png
+│   │   ├── 🖼️ gabrielAlzate.jpg
+│   │   ├── 🖼️ nataliaGaviria.png
+│   │   ├── 🖼️ react.svg
+│   │   ├── 🖼️ reporte.png
+│   │   ├── 🖼️ taller.svg
+│   │   ├── 🖼️ terceraObra.png
+│   │   └── 🖼️ zehn.19.svg
+│   ├── 📁 components
+│   │   ├── 📁 JSX
+│   │   │   ├── 📁 CSS
+│   │   │   │   ├── 🎨 Button.css
+│   │   │   │   ├── 🎨 Navbar.css
+│   │   │   │   └── 🎨 footer.css
+│   │   │   ├── 📄 Navbar.jsx
+│   │   │   └── 📄 footer.jsx
+│   │   └── 📄 Button.jsx
+│   └── 📄 main.jsx
+├── ⚙️ .gitignore
+├── 📝 README.md
+├── 📄 eslint.config.js
+├── 🌐 index.html
+├── ⚙️ package-lock.json
+├── ⚙️ package.json
+└── 📄 vite.config.js
 ```
 
 ---
