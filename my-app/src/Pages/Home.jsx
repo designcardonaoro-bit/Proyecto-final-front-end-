@@ -10,13 +10,22 @@ import edwin from "../assets/edwinGomez.png";
 import apolo from "../assets/apolo.png";
 import futuroSalva from "../assets/futuroSalvaje.png";
 import tercera from "../assets/terceraObra.png";
-
-
-
-
-
+import reporte from "../assets/reporte.png";
+import Swal from "sweetalert2";
 
 const Home = () => {
+  const handleReportButtonClick = (e) => {
+    e.preventDefault(); // Prevent default link behavior
+    Swal.fire({
+      title: "Dale click al botón para redirigirte a nuestra pagina principal",
+      icon: "success",
+      draggable: true
+    }).then(() => {
+      // Redirect to the desired link after the alert
+      window.location.href = "#"; // Replace '#' with your desired link
+    });
+  };
+
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
       <Navbar />
@@ -129,6 +138,20 @@ const Home = () => {
                 <a href="#" className="social-link">Twitter</a>
                 <a href="#" className="social-link">Instagram</a>
               </div>
+            </div>
+          </div>
+        </section>
+        
+        <section className="report-section">
+          <div className="report-container">
+            <div className="report-text">
+              <h2>Conocenos</h2>
+              <p>Incluye el Informe Periódico de Fin de Ejercicio 2024</p>
+              <p>Recordamos un año impulsado por la confianza y el apoyo de todos nuestros aliados y comunidades.</p>
+              <a href="https://zehn.com.co/" className="report-button" onClick={handleReportButtonClick}>DESCUBRE MÁS</a>
+            </div>
+            <div className="report-image">
+              <img src={reporte} alt="Informe de gestión" />
             </div>
           </div>
         </section>

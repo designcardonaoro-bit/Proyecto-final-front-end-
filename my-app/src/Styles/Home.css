@@ -248,3 +248,65 @@
 .social-link:hover {
   color: #005582;
 }
+
+/* Report section */
+.report-section {
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+}
+
+.report-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; /* Center content for smaller screens */
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1.5rem;
+}
+
+.report-text {
+  flex: 1;
+  min-width: 280px; /* Adjusted for smaller screens */
+  text-align: center; /* Center text for smaller screens */
+}
+
+.report-text h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.report-text p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.report-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #d2b495;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.report-button:hover {
+  background-color: #b77b42;
+}
+
+.report-image {
+  flex: 1;
+  min-width: 280px; /* Adjusted for smaller screens */
+  text-align: center;
+}
+
+.report-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
