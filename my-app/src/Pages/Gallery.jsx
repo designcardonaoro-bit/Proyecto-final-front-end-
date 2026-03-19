@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import Navbar from "../components/JSX/Navbar";
-import Footer from "../components/JSX/footer";
-import Button from "../components/Button";
-import "../Styles/Gallery.css";
-import Swal from "sweetalert2";
+import Navbar from "../components/JSX/Navbar"; // Componente de la barra de navegación
+import Footer from "../components/JSX/footer"; // Componente del pie de página
+import Button from "../components/Button"; // Componente de botón adicional
+import "../Styles/Gallery.css"; // Estilos específicos para la galería
+import Swal from "sweetalert2"; // Librería para mostrar alertas
 
+// Lista de obras de arte con sus detalles
 const obras = [
   {
     titulo: "Luz y Sombra",
@@ -57,68 +58,73 @@ const obras = [
 ];
 
 function Gallery() {
+  // Estado para controlar si el modal está abierto y qué obra se está mostrando
   const [modalOpen, setModalOpen] = useState(false);
   const [obraActual, setObraActual] = useState(null);
 
+  // Función para abrir el modal con los detalles de una obra
   const openModal = (obra) => {
     setObraActual(obra);
     setModalOpen(true);
   };
 
+  // Función para cerrar el modal
   const closeModal = () => {
     setModalOpen(false);
     setObraActual(null);
   };
 
+  // Función para manejar el clic en el botón "Comprar"
   const handleBuyClick = () => {
     Swal.fire({
       title: "Dale click al botón para redirigirte a nuestra pagina principal",
       icon: "success",
       draggable: true
     }).then(() => {
-      window.location.href = "#";
+      window.location.href = "https://zehn.com.co/"; // Redirige a la página principal
     });
   };
 
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-      <Navbar />
+      <Navbar /> {/* Barra de navegación */}
       <main className="zehn-main" style={{ flex: 1 }}>
-        <section className="zehn-gallery">
+        <section className="zehn-gallery"> {/* Sección de galería */}
           {obras.map((obra, idx) => (
             <div
               className="zehn-gallery-item"
               key={idx}
-              onClick={() => openModal(obra)}
+              onClick={() => openModal(obra)} // Abre el modal al hacer clic en una obra
             >
-              <img src={obra.imagen} alt={obra.titulo} />
-              <div className="zehn-title">{obra.titulo}</div>
-              <div className="zehn-price">{obra.precio}</div>
+              <img src={obra.imagen} alt={obra.titulo} /> {/* Imagen de la obra */}
+              <div className="zehn-title">{obra.titulo}</div> {/* Título de la obra */}
+              <div className="zehn-price">{obra.precio}</div> {/* Precio de la obra */}
             </div>
           ))}
         </section>
-        {modalOpen && (
+        {modalOpen && ( // Modal para mostrar detalles de la obra */
+
           <div className="zehn-modal" onClick={closeModal}>
             <div
               className="zehn-modal-content"
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()} // Evita cerrar el modal al hacer clic dentro de él
             >
               <span className="zehn-close" onClick={closeModal}>
-                &times;
+                &times; {/* Botón para cerrar el modal */}
               </span>
-              <img src={obraActual.imagen} alt={obraActual.titulo} />
+              <img src={obraActual.imagen} alt={obraActual.titulo} /> {/* Imagen de la obra en el modal */}
               <div className="zehn-modal-info">
-                <h2>{obraActual.titulo}</h2>
-                <p>{obraActual.descripcion}</p>
-                <p className="zehn-price">{obraActual.precio}</p>
-                <button className="zehn-buy-button" onClick={handleBuyClick}>Comprar</button>
+                <h2>{obraActual.titulo}</h2> {/* Título de la obra */}
+                <p>{obraActual.descripcion}</p> {/* Descripción de la obra */}
+                <p className="zehn-price">{obraActual.precio}</p> {/* Precio de la obra */}
+                <button className="zehn-buy-button" onClick={handleBuyClick}>Comprar</button> {/* Botón para comprar */}
               </div>
             </div>
           </div>
         )}
       </main>
-      <Footer />
-      <Button />
+      <Footer /> {/* Pie de página */}
+      <Button /> {/* Botón adicional */}
     </div>
   );
 }
