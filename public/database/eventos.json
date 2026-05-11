@@ -1,0 +1,36 @@
+{
+  "abril": [
+    {
+      "date": "Abril 23 2026",
+      "title": "TALLER PARA EMPRENDEDORES: ¡ELIGE EL CAMINO HACIA EL EXITO",
+      "location": "Zehn Living Medellin",
+      "image": "https://zehn.com.co/wp-content/uploads/2024/11/Banner.jpg"
+    },
+    {
+      "date": "Abril 30 2026",
+      "title": "CONVERSATORIO: DARLE RIENDA SUELTA A LOS ALTER EGO",
+      "location": "Zehn Living Medellin",
+      "image": "/eventos/evento2.png"
+    }
+  ],
+  "mayo": [
+    {
+      "date": "Mayo 15 2026 - Mayo 31 2026",
+      "title": "OPENING: UMBRALES CONTEMPORÁNEOS, CONEXIÓN COLECTIVA",
+      "location": "Zehn Living Medellin",
+      "image": "https://zehn.com.co/wp-content/uploads/2025/02/UMBRALES-CONTEMPORANEOS.jpeg"
+    },
+    {
+      "date": "Mayo 20 2026",
+      "title": "PLANOS IMAGINARIOS. TALLER DE PINTURA PARA NIÑOS",
+      "location": "Zehn Living Medellin",
+      "image": "https://zehn.com.co/wp-content/uploads/2025/02/taller.jpeg"
+    },
+    {
+      "date": "Mayo 7 2026",
+      "title": "LA PAZ SOLO ES MENTAL: ENTENDÁMOSLA JUNTOS",
+      "location": "Parque Explora Medellín",
+      "image": "https://zehn.com.co/wp-content/uploads/2024/11/EVENTO-1.jpg"
+    }
+  ]
+}

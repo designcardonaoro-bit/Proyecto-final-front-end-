@@ -5,9 +5,7 @@
   background-color: #ffffff;
 }
 
-/* ********************************** */
-/*               BANNER               */
-/* ********************************** */
+
 .banner {
   background-image: linear-gradient(100deg, #000000, #00000020),
     url("https://zehn.com.co/wp-content/uploads/2024/04/zehn.19.jpg"); /* Cambia la ruta según la ubicación de tu imagen */
