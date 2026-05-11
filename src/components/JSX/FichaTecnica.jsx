@@ -39,8 +39,8 @@ function FichaTecnica({ obra, onClose }) {
                 <p className="ficha-value">{obra.dimensiones}</p>
               </div>
               <div className="ficha-info-row">
-                <p className="ficha-label">Estado de la obra:</p>
-                <p className="ficha-value">{obra.estado}</p>
+                <p className="ficha-label">Precio:</p>
+                <p className="ficha-value">{obra.precio}</p>
               </div>
             </div>
 
