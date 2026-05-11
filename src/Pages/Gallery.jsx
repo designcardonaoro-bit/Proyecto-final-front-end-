@@ -61,10 +61,12 @@ function Gallery() {
     }
   };
 
-  const obrasFiltradas = obras.filter((obra) => {
-    if (filtro === "todas") return true;
-    return obra.categoria === filtro;
-  });
+  const parsePrice = (precio) => Number(precio.replace(/[^0-9]/g, ""));
+
+  const obrasFiltradas =
+    filtro === "precio"
+      ? [...obras].sort((a, b) => parsePrice(a.precio) - parsePrice(b.precio))
+      : obras.filter((obra) => filtro === "todas" || obra.categoria === filtro);
   return (
     <div
       style={{
@@ -157,7 +159,7 @@ function Gallery() {
           >
             Digital
           </button>
-                    <button
+          <button
             className={filtro === "precio" ? "active" : ""}
             onClick={() => setFiltro("precio")}
           >
@@ -173,7 +175,7 @@ function Gallery() {
               <div className="historia-texto">
                 <h2>{obra.titulo}</h2>
                 <p>{obra.autor}</p>
-                <p className="elemento-description">{obra.historia}</p>
+                <p className="elemento-description">{obra.descripcion}</p>
 
                 <button onClick={() => irAGaleria(obra)}>
                   Comprar en galería

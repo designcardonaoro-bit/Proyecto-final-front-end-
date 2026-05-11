@@ -177,15 +177,21 @@ p.modal-description{
 }
 
 .instructions{
-  font-size: 17px;
+  font-size: 19px;
   color: #000000; 
-  margin-top: 70px;
+  margin-top: 100px;
+  margin-bottom: 30px;
   margin-left: 60px;
-  text-align: left;
+  text-align: center;
+  justify-content: center;
   line-height: 130%;
-  padding-right: 400px;
+  padding: 2rem 1rem 2rem 1rem;
+  width: 50%; /* Ajusta el ancho para dividir el texto */
+  margin: 100px auto 30px auto; /* Centra el texto horizontalmente */
+  word-wrap: break-word;
+  border-radius: 40px;
+  background: #eeecec;
 }
-
 
 .swiper {
   width: 100%;
@@ -250,8 +256,8 @@ p.modal-description{
 .filtros {
   display: flex;
   gap: 10px;
-  justify-content: right;
-  padding-right: 30px;
+  justify-content: center;
+  padding-left: 30px;
   margin-top: 50px;
 }
 
@@ -260,23 +266,23 @@ p.modal-description{
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background: #eee;
   transition: 0.3s;
+  font-weight: bold;
 }
 
 .filtros button:hover {
-  background: #ddd;
+  background: #e0e0e0;
 }
 
 .filtros button.active {
-  background: #8a6e52;
+  background: #d2b495;
   color: #fff;
 }
 
 .historia {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 80px;
   max-width: 3000px;
   margin: 0 auto;
   margin-top: 40px;
@@ -297,16 +303,22 @@ p.modal-description{
 }
 
 .historia-card img {
-  width: 300px;
-  height: 330px;
+  width: 280px;
+  flex-shrink: 0;
+  align-self: stretch;
   object-fit: cover;
 }
 
-.historia-texto {  
+.historia-texto {
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex: 1;
+}
+
+.historia-texto button {
+  margin-top: auto;
 }
 
 .historia-texto h2 {

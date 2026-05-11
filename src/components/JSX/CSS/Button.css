@@ -6,7 +6,6 @@
 
   display: flex;
   align-items: center;
-  gap: 10px;
 
   padding: 14px 22px;
   background-color: #44cc76;
@@ -21,7 +20,7 @@
 }
 
 .whatsapp-button:hover {
-  background-color: #1ebe5d;
+  background-color: #3bc773;
   transform: scale(1.05);
 }
 
