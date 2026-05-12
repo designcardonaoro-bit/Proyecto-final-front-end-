@@ -1,3 +1,7 @@
+.swal2-container {
+  z-index: 9000 !important;
+}
+
 .ficha-overlay {
   position: fixed;
   z-index: 2000;

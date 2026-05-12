@@ -1,6 +1,23 @@
+import Swal from "sweetalert2";
+import { useCart } from "../../context/CartContext";
 import "./CSS/FichaTecnica.css";
 
 function FichaTecnica({ obra, onClose }) {
+  const { addToCart } = useCart();
+
+  const handleComprar = () => {
+    addToCart(obra);
+    Swal.fire({
+      icon: "success",
+      title: "¡Obra agregada!",
+      text: `"${obra.titulo}" se agregó al carrito.`,
+      confirmButtonText: "Seguir explorando",
+      confirmButtonColor: "#d2b495",
+      timer: 3000,
+      timerProgressBar: true,
+    });
+  };
+
   return (
     <div className="ficha-overlay" onClick={onClose}>
       <div className="ficha-page" onClick={(e) => e.stopPropagation()}>
@@ -48,7 +65,7 @@ function FichaTecnica({ obra, onClose }) {
               <div className="ficha-image-frame">
                 <img src={obra.imagen} alt={obra.titulo} />
               </div>
-              <button className="ficha-buy-button">Comprar</button>
+              <button className="ficha-buy-button" onClick={handleComprar}>Comprar</button>
             </div>
           </div>
 
