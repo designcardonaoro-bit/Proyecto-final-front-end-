@@ -23,7 +23,6 @@ const Footer = () => {
 			<div className="footer-section"> 
 				<h3>Sobre nosotros</h3>
 				<ul>
-					<li>Nosotros</li>
 					<li>Contacto</li>
 					<li>Nuestra Promesa</li>
 					<li>Blog</li>

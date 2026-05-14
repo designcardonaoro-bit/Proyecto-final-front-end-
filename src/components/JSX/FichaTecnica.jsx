@@ -11,7 +11,6 @@ function FichaTecnica({ obra, onClose }) {
       icon: "success",
       title: "¡Obra agregada!",
       text: `"${obra.titulo}" se agregó al carrito.`,
-      confirmButtonText: "Seguir explorando",
       confirmButtonColor: "#d2b495",
       timer: 3000,
       timerProgressBar: true,

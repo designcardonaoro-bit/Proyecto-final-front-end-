@@ -9,6 +9,7 @@ import { Keyboard } from "swiper/modules";
 import obrasImg from "../assets/encabezados/obras.png";
 import { Link } from "react-router-dom";
 import FichaTecnica from "../components/JSX/FichaTecnica";
+import FiltrosPanel from "../components/JSX/FiltrosPanel";
 
 function Gallery() {
   const [obras, setObras] = useState([]);
@@ -31,9 +32,16 @@ function Gallery() {
   const [obraActual, setObraActual] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [filtro, setFiltro] = useState("todas");
+  const [precioRango, setPrecioRango] = useState(null);
+  const [precioMin, setPrecioMin] = useState("");
+  const [precioMax, setPrecioMax] = useState("");
   const [fichaOpen, setFichaOpen] = useState(false);
+  const [filtrosOpen, setFiltrosOpen] = useState(false);
 
   const swiperRef = useRef(null);
+
+  const handlePrev = () => swiperRef.current?.slidePrev();
+  const handleNext = () => swiperRef.current?.slideNext();
 
   const openFicha = (obra) => {
     setObraActual(obra);
@@ -63,10 +71,26 @@ function Gallery() {
 
   const parsePrice = (precio) => Number(precio.replace(/[^0-9]/g, ""));
 
-  const obrasFiltradas =
-    filtro === "precio"
-      ? [...obras].sort((a, b) => parsePrice(a.precio) - parsePrice(b.precio))
-      : obras.filter((obra) => filtro === "todas" || obra.categoria === filtro);
+  const obrasFiltradas = obras
+    .filter((obra) => filtro === "todas" || obra.categoria === filtro)
+    .filter((obra) => {
+      const p = parsePrice(obra.precio);
+      if (precioRango === "bajo") return p <= 950;
+      if (precioRango === "medio") return p > 950 && p <= 1200;
+      if (precioRango === "alto") return p > 1200;
+      if (precioMin !== "" || precioMax !== "") {
+        const min = precioMin !== "" ? Number(precioMin) : 0;
+        const max = precioMax !== "" ? Number(precioMax) : Infinity;
+        return p >= min && p <= max;
+      }
+      return true;
+    });
+
+  const filtrosActivos = [
+    filtro !== "todas",
+    precioRango !== null,
+    precioMin !== "" || precioMax !== "",
+  ].filter(Boolean).length;
   return (
     <div
       style={{
@@ -99,31 +123,41 @@ function Gallery() {
       <main className="zehn-main">
         <section className="zehn-gallery">
           {obras.length > 0 && (
-            <Swiper
-              key={obras.length}
-              modules={[EffectCoverflow, Pagination, Keyboard]}
-              keyboard={{ enabled: true }}
-              onSwiper={(swiper) => (swiperRef.current = swiper)}
-              effect={"coverflow"}
-              centeredSlides={true}
-              slidesPerView={3}
-              loop={true}
-              pagination={{ clickable: true }}
-              onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-            >
-              {obras.map((obra, index) => (
-                <SwiperSlide key={index}>
-                  <div
-                    onClick={() => {
-                      if (index === activeIndex) openFicha(obra);
-                    }}
-                  >
-                    <img src={obra.imagen} alt={obra.titulo} />
-                    <h3>{obra.titulo}</h3>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            <div className="swiper-nav-wrapper">
+              <button className="swiper-nav-btn swiper-nav-prev" onClick={handlePrev} aria-label="Anterior">
+                <i className="fa-solid fa-chevron-left"></i>
+              </button>
+
+              <Swiper
+                key={obras.length}
+                modules={[EffectCoverflow, Pagination, Keyboard]}
+                keyboard={{ enabled: true }}
+                onSwiper={(swiper) => (swiperRef.current = swiper)}
+                effect={"coverflow"}
+                centeredSlides={true}
+                slidesPerView={3}
+                loop={true}
+                pagination={{ clickable: true }}
+                onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+              >
+                {obras.map((obra, index) => (
+                  <SwiperSlide key={index}>
+                    <div
+                      onClick={() => {
+                        if (index === activeIndex) openFicha(obra);
+                      }}
+                    >
+                      <img src={obra.imagen} alt={obra.titulo} />
+                      <h3>{obra.titulo}</h3>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+              <button className="swiper-nav-btn swiper-nav-next" onClick={handleNext} aria-label="Siguiente">
+                <i className="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
           )}
         </section>
 
@@ -134,37 +168,19 @@ function Gallery() {
           Aquí descubrirás las historias que dieron vida a cada creación.
         </p>
 
-        <div className="filtros">
+        <div className="filtros-bar">
           <button
-            className={filtro === "todas" ? "active" : ""}
-            onClick={() => setFiltro("todas")}
+            className="btn-abrir-filtros"
+            onClick={() => setFiltrosOpen(true)}
           >
-            Todas
+            ☰ Filtros
+            {filtrosActivos > 0 && (
+              <span className="filtros-badge">{filtrosActivos}</span>
+            )}
           </button>
-          <button
-            className={filtro === "pintura" ? "active" : ""}
-            onClick={() => setFiltro("pintura")}
-          >
-            Pintura
-          </button>
-          <button
-            className={filtro === "fotografia" ? "active" : ""}
-            onClick={() => setFiltro("fotografia")}
-          >
-            Fotografía
-          </button>
-          <button
-            className={filtro === "digital" ? "active" : ""}
-            onClick={() => setFiltro("digital")}
-          >
-            Digital
-          </button>
-          <button
-            className={filtro === "precio" ? "active" : ""}
-            onClick={() => setFiltro("precio")}
-          >
-            Precio
-          </button>
+          <p className="filtros-resultado">
+            {obrasFiltradas.length} obra{obrasFiltradas.length !== 1 ? "s" : ""} encontrada{obrasFiltradas.length !== 1 ? "s" : ""}
+          </p>
         </div>
 
         <section className="historia">
@@ -175,6 +191,7 @@ function Gallery() {
               <div className="historia-texto">
                 <h2>{obra.titulo}</h2>
                 <p>{obra.autor}</p>
+                <p className="obra-precio">{obra.precio}</p>
                 <p className="elemento-description">{obra.descripcion}</p>
 
                 <button onClick={() => irAGaleria(obra)}>
@@ -187,6 +204,20 @@ function Gallery() {
 
         {fichaOpen && obraActual && (
           <FichaTecnica obra={obraActual} onClose={closeFicha} />
+        )}
+
+        {filtrosOpen && (
+          <FiltrosPanel
+            filtro={filtro}
+            setFiltro={setFiltro}
+            precioRango={precioRango}
+            setPrecioRango={setPrecioRango}
+            precioMin={precioMin}
+            setPrecioMin={setPrecioMin}
+            precioMax={precioMax}
+            setPrecioMax={setPrecioMax}
+            onClose={() => setFiltrosOpen(false)}
+          />
         )}
       </main>
     </div>

@@ -2,78 +2,26 @@ import { useEffect, useState } from "react";
 import "./../Styles/Events.css";
 import eventosImg from "../assets/encabezados/eventos.png";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
+import Inscripcion from "../components/JSX/Inscripcion";
 
 function Events() {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedEvento, setSelectedEvento] = useState(null);
+
   const [eventos, setEventos] = useState({
     abril: [],
     mayo: [],
   });
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
-
 
   useEffect(() => {
-    fetch("/database/eventos.json")
-      .then((res) => res.json())
-      .then((data) => {
-       setEventos(data);
-       setLoading(false);
-      })
-      .catch((err) => {
-        setError("Error cargando datos");
-        setLoading(false);
-      });
-  }, []);
-
-  const [showForm, setShowForm] = useState(false);
-
-  const [form, setForm] = useState({
-    nombre: "",
-    cedula: "",
-    telefono: "",
-    correo: "",
-  });
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
+  fetch("/database/eventos.json")
+    .then((res) => res.json())
+    .then((data) => {
+      setEventos(data);
     });
-  };
+}, []);
 
-  const handleSubmit = () => {
-    const { nombre, cedula, telefono, correo } = form;
-
-    if (!nombre || !cedula || !telefono || !correo) {
-      Swal.fire("Error", "Completa todos los campos", "error");
-      return;
-    }
-    if (
-      !/^\d+$/.test(cedula) ||
-      !/^\d+$/.test(telefono) ||
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)
-    ) {
-      Swal.fire(
-        "Error",
-        "Asegúrate que los datos ingresados correspondan a los solicitados.",
-        "error",
-      );
-      return;
-    }
-
-    Swal.fire("Listo", "Inscripción enviada", "success");
-
-    setForm({
-      nombre: "",
-      cedula: "",
-      telefono: "",
-      correo: "",
-    });
-
-    setShowForm(false);
-  };
-
+  
   const [direccion, setDireccion] = useState("Zehn Living Medellin");
 
   return (
@@ -134,10 +82,13 @@ function Events() {
                 </button>
                 <button
                   className="zehn-register-button"
-                  onClick={() => setShowForm(true)}
+                  onClick={() => {
+                    setSelectedEvento(eventabril);
+                    setShowModal(true);
+                  }}
                   aria-label={`Inscribirse al evento ${eventabril.title}`}
                 >
-                  Inscribirse
+                  Ver más
                 </button>
               </div>
             </div>
@@ -172,76 +123,25 @@ function Events() {
                 </button>
                 <button
                   className="zehn-register-button"
-                  onClick={() => setShowForm(true)}
+                  onClick={() => {
+                    setSelectedEvento(eventmayo);
+                    setShowModal(true);
+                  }}
                   aria-label={`Inscribirse al evento ${eventmayo.title}`}
                 >
-                  Inscribirse
+                  Ver más
                 </button>
               </div>
             </div>
           ))}
         </div>
 
-        {showForm && (
-          <div className="zehn-modal" onClick={() => setShowForm(false)}>
-            <div
-              className="zehn-modal-content"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                className="zehn-close"
-                onClick={() => setShowForm(false)}
-                aria-label="Cerrar modal eventos"
-              >
-                &times;
-              </button>
-              <h2 className="text-modal">Formulario de inscripción</h2>
-              <div className="form-group">
-                <label htmlFor="nombre">Nombre completo</label>
-                <input
-                  type="text"
-                  id="nombre"
-                  name="nombre"
-                  placeholder="Ingresa tu nombre"
-                  value={form.nombre}
-                  onChange={handleChange}
-                />
-                <label htmlFor="cedula">Número de cédula</label>
-                <input
-                  type="text"
-                  name="cedula"
-                  placeholder="Ingresa tu cédula"
-                  value={form.cedula}
-                  onChange={handleChange}
-                />
-                <label htmlFor="telefono">Número de teléfono</label>
-                <input
-                  type="text"
-                  name="telefono"
-                  placeholder="Ingresa tu teléfono"
-                  value={form.telefono}
-                  onChange={handleChange}
-                />
-                <label htmlFor="correo">Correo electrónico</label>
-                <input
-                  type="email"
-                  name="correo"
-                  placeholder="Ingresa tu correo electrónico"
-                  value={form.correo}
-                  onChange={handleChange}
-                />
-              </div>
-              <button
-                className="zehn-enviar-button"
-                onClick={handleSubmit}
-                aria-label="Incribirse a evento"
-              >
-                Enviar
-              </button>
-            </div>
-          </div>
+        {showModal && selectedEvento && (
+          <Inscripcion
+            evento={selectedEvento}
+            onClose={() => setShowModal(false)}
+          />
         )}
-
         <section className="location-section" id="mapa">
           <h2 className="location-title">¿Comó llegar a nuestros eventos?</h2>
           <div className="location-container">
